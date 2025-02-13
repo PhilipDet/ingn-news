@@ -19,7 +19,7 @@ export const App = () => {
                 <Route path="/article/:article_id" element={<ArticlePage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route
-                    path="/callback/:access_token"
+                    path="/callback"
                     element={<CallbackPage />}
                 />
 

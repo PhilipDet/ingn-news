@@ -7,8 +7,7 @@ import { IoMdPerson } from "react-icons/io";
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const redirectUrl =
-        "https://incandescent-meerkat-161193.netlify.app/dashboard";
+    const redirectUrl = "https://magenta-crepe-4c6100.netlify.app/callback";
     const loginLink = `https://be.contentful.com/oauth/authorize?response_type=token&client_id=${
         import.meta.env.VITE_CLIENT_ID
     }&redirect_uri=${redirectUrl}&scope=content_management_manage`;

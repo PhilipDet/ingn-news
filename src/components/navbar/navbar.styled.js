@@ -55,6 +55,10 @@ export const NavbarStyled = styled.nav`
                     &::after {
                         margin-left: 1rem;
                     }
+
+                    a {
+                        text-transform: capitalize;
+                    }
                 }
 
                 @media screen and (max-width: 960px) {

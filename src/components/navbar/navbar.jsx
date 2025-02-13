@@ -1,6 +1,6 @@
-import { NavLinkStyled } from "../styledNavLink";
 import { useEffect, useState } from "react";
 import { NavbarStyled } from "./navbar.styled";
+import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
 
@@ -11,6 +11,15 @@ export const Navbar = () => {
     const loginLink = `https://be.contentful.com/oauth/authorize?response_type=token&client_id=${
         import.meta.env.VITE_CLIENT_ID
     }&redirect_uri=${redirectUrl}&scope=content_management_manage`;
+
+    const navLinks = [
+        "indland",
+        "udland",
+        "teknologi",
+        "sport",
+        "politik",
+        "samfund",
+    ];
 
     return (
         <NavbarStyled $isOpen={isOpen}>
@@ -28,54 +37,16 @@ export const Navbar = () => {
                                 Alle
                             </NavLinkStyled>
                         </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/indland"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Indland
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/udland"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Udland
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/teknologi"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Teknologi
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/sport"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Sport
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/politik"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Politik
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to="/category/samfund"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Samfund
-                            </NavLinkStyled>
-                        </li>
+                        {navLinks.map((link) => (
+                            <li key={link}>
+                                <NavLinkStyled
+                                    to={`/category/${link}`}
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {link}
+                                </NavLinkStyled>
+                            </li>
+                        ))}
                     </ul>
                 </li>
                 <li className="nav-actions">
@@ -94,5 +65,18 @@ export const Navbar = () => {
                 </li>
             </ul>
         </NavbarStyled>
+    );
+};
+
+const NavLinkStyled = ({ children, ...props }) => {
+    return (
+        <NavLink
+            {...props}
+            style={({ isActive }) => ({
+                color: isActive ? "red" : "black",
+            })}
+        >
+            {children}
+        </NavLink>
     );
 };

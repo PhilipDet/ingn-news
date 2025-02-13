@@ -18,15 +18,15 @@ export const ArticleCard = ({ article, index }) => {
     };
 
     const gridPositions = [
-        { box: 1, column: "1 / 3", row: "1 / 3" }, // Box 1
-        { box: 2, column: "1 / 2", row: "3 / 5" }, // Box 2
-        { box: 3, column: "2 / 3", row: "3 / 4" }, // Box 3
-        { box: 4, column: "2 / 3", row: "4 / 6" }, // Box 4
-        { box: 5, column: "1 / 2", row: "5 / 6" }, // Box 5
-        { box: 6, column: "1 / 3", row: "6 / 7" }, // Box 6
-        { box: 7, column: "1 / 3", row: "7 / 8" }, // Box 7
-        { box: 8, column: "1 / 2", row: "8 / 9" }, // Box 8
-        { box: 9, column: "2 / 3", row: "8 / 9" }, // Box 9
+        { box: 1, column: "1 / 3", row: "1 / 3" },
+        { box: 2, column: "1 / 2", row: "3 / 5" },
+        { box: 3, column: "2 / 3", row: "3 / 4" },
+        { box: 4, column: "2 / 3", row: "4 / 6" },
+        { box: 5, column: "1 / 2", row: "5 / 6" },
+        { box: 6, column: "1 / 3", row: "6 / 7" },
+        { box: 7, column: "1 / 3", row: "7 / 8" },
+        { box: 8, column: "1 / 2", row: "8 / 9" },
+        { box: 9, column: "2 / 3", row: "8 / 9" },
     ];
 
     const pos = gridPositions[index % gridPositions.length];

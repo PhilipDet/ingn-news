@@ -9,7 +9,9 @@ export const DashboardPage = () => {
     useEffect(() => {
         const fetchProfile = async (accessToken) => {
             await fetch(
-                "https://cdn.contentful.com/spaces/YOUR_SPACE_ID/environments/master/entries",
+                `https://cdn.contentful.com/spaces/${
+                    import.meta.env.VITE_PUBLIC_SPACE_ID
+                }/environments/master/entries`,
                 {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,

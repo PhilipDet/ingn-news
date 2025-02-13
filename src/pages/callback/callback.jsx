@@ -1,14 +1,17 @@
 import { useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const CallbackPage = () => {
-    const { access_token } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
+        const hash = window.location.hash;
+        const token = new URLSearchParams(hash.substring(1));
+        const access_token = token.get("access_token");
         console.log(access_token);
         localStorage.setItem("access_token", access_token);
-        navigate("/dashboard");
+
+        // navigate("/dashboard");
     }, []);
     return (
         <div>

@@ -1,6 +1,6 @@
-import { NavbarStyled } from "./navbar.styled";
-import { NavLink } from "react-router-dom";
+import { NavLinkStyled } from "../styledNavLink";
 import { useEffect, useState } from "react";
+import { NavbarStyled } from "./navbar.styled";
 import { FaBars } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
 
@@ -21,57 +21,60 @@ export const Navbar = () => {
                 <li className="nav-links">
                     <ul>
                         <li>
-                            <NavLink to="/" onClick={() => setIsOpen(false)}>
+                            <NavLinkStyled
+                                to="/"
+                                onClick={() => setIsOpen(false)}
+                            >
                                 Alle
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/indland"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Indland
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/udland"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Udland
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/teknologi"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Teknologi
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/sport"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Sport
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/politik"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Politik
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                         <li>
-                            <NavLink
+                            <NavLinkStyled
                                 to="/category/samfund"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Samfund
-                            </NavLink>
+                            </NavLinkStyled>
                         </li>
                     </ul>
                 </li>

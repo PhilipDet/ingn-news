@@ -9,7 +9,7 @@ export const DashboardPage = () => {
     useEffect(() => {
         const fetchProfile = async (accessToken) => {
             await fetch(
-                `https://cdn.contentful.com/spaces/${
+                `https://api.contentful.com/spaces/${
                     import.meta.env.VITE_PUBLIC_SPACE_ID
                 }/environments/master/entries`,
                 {
